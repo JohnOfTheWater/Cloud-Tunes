@@ -7,10 +7,12 @@
   function initialize(){
     $(document).foundation();
     $('#deletePanel').hide();
+    $('#audioControls').hide();
     $('#addPanel').hide();
     $('#songPanel').hide();
     $('#searchPanel').hide();
     $('#close').click(hideSongPanel);
+    $('#closeAudio').click(hideAudioControls);
     $('#closeSearch').click(hideSearchPanel);
     $('#delete').click(deletePanel);
     $('#delSong').click(showDelete);
@@ -19,6 +21,7 @@
     $('#albumsList').on('click', '.albumCover', showSongPanel);
     $('#songPanel').on('click', '.delete', deleteSong);
     $('#searchPanel').on('click', '.albumSearch', redirectToSongList);
+    $('#songList').on('click', '.songTitle', showAudioControls);
     getAlbums();
   }
 //----------Global Variables-------------------/
@@ -40,13 +43,25 @@
   }
 
   function showSongPanel(){
-    $('#songPanel').fadeIn('slow');
     $('#deletePanel').hide();
     $('#searchPanel').hide();
+    $('#songPanel').fadeIn('slow');
     actualAlbum = $(this).data('id');
     $('.songTitle').remove();
     $('.songAlbum').remove();
     getSongs();
+  }
+
+  function showAudioControls(){
+    //$('#songPanel').hide();
+    $('#audioControls').fadeIn('slow');
+    var song = $(this).text();
+    song = song.slice(5);
+    appendSong(song);
+  }
+
+  function hideAudioControls(){
+    $('#audioControls').fadeOut('slow');
   }
 
   function hideSongPanel(){
@@ -56,6 +71,17 @@
   function hideSearchPanel(){
     $('#searchPanel').fadeOut();
   }
+//----------AppendSong-----------------//
+
+  function appendSong(title){
+    $('.songToPlay').remove();
+    var $title = $('<div>');
+
+    $title.text(title).addClass('songToPlay');
+
+    $('#audioControls').append($title);
+  }
+
 //----------RedirectToSongList-----------------//
 
   function redirectToSongList(){

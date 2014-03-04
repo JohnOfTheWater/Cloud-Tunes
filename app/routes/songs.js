@@ -35,6 +35,10 @@ exports.create = function(req, res){
     res.redirect('/');
   });
 };
+
+exports.redirect = function(req, res){
+  res.redirect('/artists/'+req.params.artist+'');
+};
 /*
 exports.photoAdd = function(req, res){
   Album.findById(req.params.id, function(album){

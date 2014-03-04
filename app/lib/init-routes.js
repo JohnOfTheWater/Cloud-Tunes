@@ -35,6 +35,7 @@ function load(app, fn){
   app.post('/songs', d, songs.create);
   app.del('/songs/:id', d, songs.destroy);
   app.get('/songsearch/:title', d, songs.search);
+  //app.get('/redirect/:artist', d, songs.redirect);
   app.del('/albums/:id', d, albums.destroy);
   console.log('Routes Loaded');
   fn();
