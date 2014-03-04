@@ -1,0 +1,390 @@
+@import url(http://fonts.googleapis.com/css?family=Gafata);
+@import url(http://fonts.googleapis.com/css?family=Concert+One);
+
+body{
+  background: url('http://10.0.0.11:4000/img/musicBackground.jpeg');
+  background-size: cover;
+}
+
+@bg-color: #C4C1CF;
+
+//-------Audio Panel-------------//
+
+
+#audioControls{
+  padding: 5px 0px 0px 5px;
+  box-shadow: 6px 6px 5px #525050;
+  background-color: rgba(235, 229, 229, 0.5);
+  border: 1px solid white;
+  margin: 0px 0px 0px 0px;
+  width: 305px;
+  min-height: 100px;
+  position: absolute;
+  top: 190px; left: 15px;
+  float: left;
+  font-family: 'Concert One', cursive;
+  //text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+#audio {
+  position: relative;
+  top: 46px; left: -3px;
+}
+
+//-------Artists Show-------------//
+#searchPanel{
+  padding: 5px 0px 0px 5px;
+  box-shadow: 6px 6px 5px #525050;
+  background-color: rgba(235, 229, 229, 0.5);
+  border: 1px solid white;
+  margin: 0px 0px 0px 0px;
+  width: 296px;
+  min-height: 100px;
+  position: absolute;
+  top: 190px; left: 15px;
+  float: left;
+  font-family: 'Concert One', cursive;
+  //text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+#closeSearch {
+  position: absolute;
+  top: 1px; left: 235px;
+  margin: 0px 0px 0px 0px;
+  font-size: 15px;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px black, -1px -1px 1px black;
+  z-index: +3;
+}
+
+.songTitleSearch {
+  position: relative;
+  top: 0px; left: 0px;
+  font-size: 22px;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+.albumSearch {
+  position: relative;
+  top: 0px; left: 0px;
+  font-size: 22px;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+.albumSearch:hover{
+  color: #817C7C;
+}
+
+.artistSearch {
+  position: relative;
+  top: 0px; left: 0px;
+  font-size: 22px;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+
+#songPanel{
+  padding: 5px 0px 0px 5px;
+  box-shadow: 6px 6px 5px #525050;
+  background-color: rgba(235, 229, 229, 0.5);
+  border: 1px solid white;
+  margin: 0px 0px 0px 0px;
+  width: 296px;
+  min-height: 100px;
+  position: absolute;
+  top: 190px; left: 15px;
+  float: left;
+  font-family: 'Concert One', cursive;
+  //text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+#close {
+  position: absolute;
+  top: 1px; left: 235px;
+  margin: 0px 0px 0px 0px;
+  font-size: 15px;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px black, -1px -1px 1px black;
+  z-index: +3;
+}
+
+#album {
+  text-align: center;
+  position: absolute;
+  top: 18px; left: 117px;
+  margin: 0px 0px 0px 0px;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+#addSong {
+  position: relative;
+  top: 10px; left: 10px;
+  margin: 0px 0px 0px 0px;
+}
+
+#delSong {
+  position: relative;
+  top: 50px; left: -89px;
+  margin: 0px 0px 0px 0px;
+}
+
+#songList {
+  position: relative;
+  top: 50px; left: 12px;
+  margin: 0px 0px 57px 0px;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+.songAlbum {
+  color: red;
+  position: relative;
+  top: -2px; left: 0px;
+  font-size: 20px;
+  width: 158px;
+  text-transform: uppercase;
+}
+
+.songTitle {
+  font-size: 20px;
+  width: 260px;
+}
+
+.songTitle:hover{
+  color: #817C7C;
+}
+
+.delete {
+  //font-size: 20px;
+  //width: 173px;
+  float: right;
+  position: relative;
+  top: 4px; left: 11px;
+  color: red;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+  font-size: 16px;
+}
+
+.delete:hover{
+  color: #F17171;
+}
+
+#home {
+  position: absolute;
+  top: 18px; left: 1230px;
+}
+
+#search {
+  position: absolute;
+  top: 17px; left: 1000px;
+  width: 150px;
+  border-radius: 10px;
+  z-index: +3;
+}
+
+#searchButton {
+  position: absolute;
+  top: 19px; left: 1131px;
+  width: 60px;
+  border-radius: 10px;
+}
+
+#albumsList {
+  float: left;
+  position: relative;
+  top: 50px; left: 200px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  //border: 1px solid black;
+  max-width: 1000px;
+}
+
+.albumCover{
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin: 0px 132px 50px 0px;
+  padding: 0px 0px 0px 0px;
+  box-shadow: 6px 0px 5px #525050;
+}
+
+.albumTitle{
+  font-family: 'Gafata', sans-serif;
+  color: #008cba;
+  z-index: -1;
+  padding: 7px 0px 0px 0px;
+  position: relative;
+  top: 192px; left: 0px;
+  box-shadow: 6px 6px 5px #525050;
+  background-color: rgba(235, 229, 229, 0.5);
+}
+
+//-------------------------------//
+#fieldset{
+  padding: 10px -1px 0px 0px;
+  box-shadow: 6px 6px 5px #525050;
+  background-color: rgba(235, 229, 229, 0.7);
+  border: 1px solid white;
+  margin: 0px 0px 0px 0px;
+  font-family: 'Concert One', cursive;
+  //text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+//-------addPanel------------------//
+
+#addPanel{
+  padding: 5px 0px 0px 5px;
+  box-shadow: 6px 6px 5px #525050;
+  background-color: rgba(235, 229, 229, 0.5);
+  border: 1px solid white;
+  margin: 0px 0px 0px 0px;
+  width: 280px;
+  height: 190px;
+  position: absolute;
+  top: 190px; left: 15px;
+  float: left;
+  font-family: 'Concert One', cursive;
+  //text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+#new {
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+  font-size: 22px;
+}
+
+#addTitle {
+  width: 267px;
+  position: relative;
+  top: 10px; left: 0px;
+}
+
+#addDate {
+  width: 150px;
+  position: relative;
+  top: 0px; left: 0px;
+}
+
+#file {
+  //width: 150px;
+  position: relative;
+  top: 0px; left: 0px;
+}
+
+#create {
+  //width: 150px;
+  position: relative;
+  top: -93px; left: 165px;
+}
+
+//-------DeletePanel--------------//
+
+#deletePanel{
+  padding: 5px 0px 0px 5px;
+  box-shadow: 6px 6px 5px #525050;
+  background-color: rgba(235, 229, 229, 0.5);
+  border: 1px solid white;
+  margin: 0px 0px 0px 0px;
+  width: 280px;
+  min-height: 100px;
+  position: absolute;
+  top: 190px; left: 15px;
+  float: left;
+  font-family: 'Concert One', cursive;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+#title{
+  font-size: 22px;
+  float: left;
+  margin: 0px 0px 5px 0px;
+}
+  //visibility: hidden;
+
+.title{
+  color: rgb(211,8,8);
+  font-size: 20px;
+  //text-align: center;
+}
+
+.title:hover{
+  color: #F17171;
+}
+
+//-------Controls--------------//
+
+#controls {
+  padding: 0px 0px 0px 0px;
+  box-shadow: 6px 6px 5px #525050;
+  background-color: rgba(235, 229, 229, 0.7);
+  border: 1px solid white;
+  margin: 0px 0px 0px 0px;
+  width: 130px;
+  height: 100px;
+  position: relative;
+  top: 0px; left: 50px;
+  float: left;
+}
+
+#newAlbum {
+  position: relative;
+  top: 10px; left: 17px;
+  margin: 0px 0px 0px 0px;
+}
+
+#newArtist {
+  position: relative;
+  top: 10px; left: 20px;
+  margin: 0px 0px 0px 0px;
+}
+
+#delete {
+  position: relative;
+  top: 20px; left: 12px;
+  margin: 0px 0px 0px 0px;
+}
+
+
+//-------Old Stuff--------------//
+
+#albumPanel{
+  border: 1px solid black;
+}
+
+.album{
+  font-family: 'Gafata', sans-serif;
+  font-size: 12px;
+  border: 1px dashed #252525;
+  margin: 0px -58px 40px 100px;
+  float: left;
+  width: 200px;
+  box-shadow: 6px 6px 5px #525050;
+  background-color: rgba(235, 229, 229, 0.5);
+}
+
+.cover{
+  background-size: cover;
+  height: 200px;
+}
+
+.xtitle{
+  padding: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.taken{
+  padding: 5px;
+}
+
+.photo{
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin: 0px 25px 25px 0px;
+  background-size: cover;
+  border: 1px solid black;
+}
+

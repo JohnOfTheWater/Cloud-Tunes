@@ -1,0 +1,38 @@
+doctype html
+//[if IE 9]><html class="lt-ie10" lang="en" > <![endif]
+html(class='no-js', lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/foundation.css')
+    link(rel='stylesheet', href='/less/app.css')
+    script(src='/js/vendor/modernizr.js')
+  body
+    h1=title
+    #controls
+      a.button.tiny.radius#newArtist(href='/artists/new') New Artist
+      .button.tiny.radius#delete Remove Artist
+    #deletePanel
+      #title REMOVE ARTIST
+    #addPanel
+      #new NEW ARTIST
+      input(type='text', placeholder='title')#addTitle
+      input(type='date')#addDate
+      input(type='file')#file
+      .button.small.radius#create Create
+    .row
+      .small-12.columns
+        each artist in artists
+          .album(val= artist._id)
+            .cover(style='background-image:url("'+artist.photo+'")')
+            .xtitle: a(href='/artists/' + artist.name)= artist.name
+            //.taken= moment(artist.name).format('MMMM Do, YYYY')
+
+    script(src='/js/vendor/jquery.js')
+    script(src='/js/vendor/foundation.js')
+    script(src='/js/vendor/lodash.js')
+    script(src='/js/vendor/moment.js')
+    script(src='/js/source/mainArtists.js')
+
