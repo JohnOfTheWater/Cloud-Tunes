@@ -8,6 +8,9 @@
     $(document).foundation();
     $('#deletePanel').hide();
     $('#addPanel').hide();
+    $('#searchPanel').hide();
+    $('#closeSearch').click(hideSearchPanel);
+    $('#searchButton').click(searchSong);
     $('#newArtist').click(addPanel);
     $('#delete').click(deletePanel);
     $('#deletePanel').on('click', '.title', deleteArtist);
@@ -16,6 +19,12 @@
 //----------Global Variables-------------------/
 
   var actualId = '';
+//----------Capitalize-------------------/
+
+  function capitalize(x){
+    return x.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase();});
+  }
+
 //----------Animation-------------------/
 
   function deletePanel(){
@@ -28,8 +37,38 @@
     $('#addPanel').fadeToggle('slow');
   }
 
-//-------Add Artist------------------------------//
+  function hideSearchPanel(){
+    $('#searchPanel').fadeOut();
+  }
 
+//-------Search Song------------------------------//
+  function searchSong(){
+    var title = $('#search').val();
+    title = title.toLowerCase();
+    var url = window.location.origin.replace(/[0-9]{4}/, '4000') + '/songsearch/' + title;
+    $.getJSON(url, displaySearch);
+  }
+
+  function displaySearch(data){
+    $('#songPanel').hide();
+    $('.songTitleSearch').remove();
+    $('#searchPanel').fadeIn('slow');
+    var $songTitle = $('<div>');
+    var $album = $('<div>');
+    var $artist = $('<div>');
+    var album = data.song[0].album;
+    album = album.replace(/-/g, ' ');
+    var songTitle = capitalize(data.song[0].title);
+
+    $songTitle.text('SONG: '+songTitle).addClass('songTitleSearch').attr('data-id', data.song[0]._id);
+    $album.text('ALBUM: '+album).addClass('albumSearch').attr('data-id', album);
+    $artist.text('ARTIST: '+data.song[0].artist).addClass('artistSearch').attr('data-id', data.song[0]._id);
+
+    $songTitle.append($artist);
+    $artist.append($album);
+    $('#searchPanel').append($songTitle);
+
+  }
 
 //-------delete Artist----------//
 

@@ -37,6 +37,11 @@ exports.create = function(req, res){
   });
 };
 /*
+exports.redirect = function(req, res){
+  console.log('inside redirect: '+req.params.artist);
+  res.redirect('/artists/'+req.params.artist+'');
+};
+
 exports.photoAdd = function(req, res){
   Album.findById(req.params.id, function(album){
     album.addPhoto(req.files.photo.path, req.files.photo.name);

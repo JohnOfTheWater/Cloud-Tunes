@@ -50,7 +50,7 @@ body{
   text-shadow: 1px 1px 1px white, -1px -1px 1px white;
 }
 
-//-------Artists Show-------------//
+//-------Search Song-------------//
 #searchPanel{
   padding: 5px 0px 0px 5px;
   box-shadow: 6px 6px 5px #525050;
@@ -58,7 +58,7 @@ body{
   border: 1px solid white;
   margin: 0px 0px 0px 0px;
   width: 296px;
-  min-height: 100px;
+  min-height: 220px;
   position: absolute;
   top: 190px; left: 15px;
   float: left;
@@ -77,31 +77,65 @@ body{
   z-index: +3;
 }
 
+#canzone {
+  position: absolute;
+  top: 20px; left: 5px;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+#artista {
+  position: absolute;
+  top: 155px; left: 5px;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+#disco {
+  position: absolute;
+  top: 75px; left: 5px;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
 .songTitleSearch {
   position: relative;
-  top: 0px; left: 0px;
-  font-size: 22px;
+  top: 1px; left: 0px;
+  font-size: 27px;
   text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+  //float: right;
+  color: crimson;
+}
+
+.songTitleSearch:hover{
+  color: darkgrey;
 }
 
 .albumSearch {
   position: relative;
-  top: 0px; left: 0px;
-  font-size: 22px;
+  top: 1px; left: 0px;
+  font-size: 27px;
   text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+  //float: right;
+  color: crimson;
 }
 
 .albumSearch:hover{
-  color: #817C7C;
+  color: darkgrey;
 }
 
 .artistSearch {
   position: relative;
-  top: 0px; left: 0px;
-  font-size: 22px;
+  top: 1px; left: 0px;
+  font-size: 27px;
   text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+  //float: right;
+  color: crimson;
 }
 
+.artistSearch:hover{
+  color: darkgrey;
+}
 
 #songPanel{
   padding: 5px 0px 0px 5px;

@@ -22,6 +22,7 @@ function load(app, fn){
   app.get('/xxx/:title', d, albums.search);
   app.get('/', d, artists.index);
   app.get('/artists/new', d, artists.new);
+  //app.get('/artistsearch/:artist', d, artists.redirect);
   app.post('/artists', d, artists.create);
   app.get('/artistsList', d, artists.list);
   app.del('/artists/:id', d, artists.destroy);

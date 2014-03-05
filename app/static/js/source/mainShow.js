@@ -21,6 +21,7 @@
     $('#albumsList').on('click', '.albumCover', showSongPanel);
     $('#songPanel').on('click', '.delete', deleteSong);
     $('#searchPanel').on('click', '.albumSearch', redirectToSongList);
+    //$('#searchPanel').on('click', '.artistSearch', goToArtistPage);
     $('#songList').on('click', '.songTitle', showAudioControls);
     getAlbums();
   }
@@ -81,7 +82,17 @@
 
     $('#audioControls').append($title);
   }
+//----------goToArtistPage-----------------//
+/*
+  function goToArtistPage(){
+    debugger;
+    var artist = $(this).text();
+    console.log(artist);
+    var url = window.location.origin.replace(/[0-9]{4}/, '4000') + '/artistsearch/' + artist;
+    $.getJSON(url);
 
+  }
+*/
 //----------RedirectToSongList-----------------//
 
   function redirectToSongList(){
@@ -104,21 +115,23 @@
   function displaySearch(data){
     $('#songPanel').hide();
     $('.songTitleSearch').remove();
+    $('.albumSearch').remove();
+    $('.artistSearch').remove();
     $('#searchPanel').fadeIn('slow');
     var $songTitle = $('<div>');
     var $album = $('<div>');
-    var $artist = $('<div>');
+    var $artist = $('<a>');
     var album = data.song[0].album;
     album = album.replace(/-/g, ' ');
     var songTitle = capitalize(data.song[0].title);
 
-    $songTitle.text('SONG: '+songTitle).addClass('songTitleSearch').attr('data-id', data.song[0]._id);
-    $album.text('ALBUM: '+album).addClass('albumSearch').attr('data-id', album);
-    $artist.text('ARTIST: '+data.song[0].artist).addClass('artistSearch').attr('data-id', data.song[0]._id);
+    $songTitle.text(songTitle).addClass('songTitleSearch').attr('data-id', data.song[0]._id);
+    $album.text(album).addClass('albumSearch').attr('data-id', album);
+    $artist.text(data.song[0].artist).addClass('artistSearch').attr('href', 'http://10.0.0.11:4000/artists/'+data.song[0].artist);
 
-    $songTitle.append($artist);
-    $artist.append($album);
-    $('#searchPanel').append($songTitle);
+    $('#canzone').append($songTitle);
+    $('#artista').append($artist);
+    $('#disco').append($album);
 
   }
 /*

@@ -11,6 +11,8 @@ html(class='no-js', lang='en')
     script(src='/js/vendor/modernizr.js')
   body
     h1=title
+    input#search(type='search', placeholder='search song...', results='0', autofocus='true')
+    button.tiny.radius#searchButton Search
     #controls
       a.button.tiny.radius#newArtist(href='/artists/new') New Artist
       .button.tiny.radius#delete Remove Artist
@@ -29,6 +31,8 @@ html(class='no-js', lang='en')
             .cover(style='background-image:url("'+artist.photo+'")')
             .xtitle: a(href='/artists/' + artist.name)= artist.name
             //.taken= moment(artist.name).format('MMMM Do, YYYY')
+    #searchPanel Search Result:
+      #closeSearch close[x]
 
     script(src='/js/vendor/jquery.js')
     script(src='/js/vendor/foundation.js')
